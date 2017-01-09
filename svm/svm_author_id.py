@@ -24,6 +24,103 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 ### your code goes here ###
+from sklearn.svm import SVC
+
+
+# features_train = features_train[:len(features_train)/100] 
+# labels_train = labels_train[:len(labels_train)/100] 
+
+
+# clf = SVC(kernel="rbf", C=10)
+
+# #### now your job is to fit the classifier
+# #### using the training features/labels, and to
+# #### make a set of predictions on the test data
+# t0 = time()
+# clf.fit(features_train, labels_train)
+# print "training time:", round(time()-t0, 3), "s"
+
+
+# #### store your predictions in a list named pred
+# t1 = time()
+# pred = clf.predict(features_test)
+# print "predicting time:", round(time()-t1, 3), "s"
+
+# from sklearn.metrics import accuracy_score
+# acc = accuracy_score(pred, labels_test)
+
+# print("C=10 accuracy", acc)
+
+
+
+# clf = SVC(kernel="rbf", C=100)
+
+# #### now your job is to fit the classifier
+# #### using the training features/labels, and to
+# #### make a set of predictions on the test data
+# t0 = time()
+# clf.fit(features_train, labels_train)
+# print "training time:", round(time()-t0, 3), "s"
+
+
+# #### store your predictions in a list named pred
+# t1 = time()
+# pred = clf.predict(features_test)
+# print "predicting time:", round(time()-t1, 3), "s"
+
+# from sklearn.metrics import accuracy_score
+# acc = accuracy_score(pred, labels_test)
+
+# print("C=100 accuracy", acc)
+
+
+
+# clf = SVC(kernel="rbf", C=1000)
+
+
+# #### now your job is to fit the classifier
+# #### using the training features/labels, and to
+# #### make a set of predictions on the test data
+# t0 = time()
+# clf.fit(features_train, labels_train)
+# print "training time:", round(time()-t0, 3), "s"
+
+
+# #### store your predictions in a list named pred
+# t1 = time()
+# pred = clf.predict(features_test)
+# print "predicting time:", round(time()-t1, 3), "s"
+
+# from sklearn.metrics import accuracy_score
+# acc = accuracy_score(pred, labels_test)
+
+# print("C=1000 accuracy", acc)
+
+
+
+clf = SVC(kernel="rbf", C=10000)
+
+#### now your job is to fit the classifier
+#### using the training features/labels, and to
+#### make a set of predictions on the test data
+t0 = time()
+clf.fit(features_train, labels_train)
+print "training time:", round(time()-t0, 3), "s"
+
+
+#### store your predictions in a list named pred
+t1 = time()
+pred = clf.predict(features_test)
+print "predicting time:", round(time()-t1, 3), "s"
+
+# print (pred[10], pred[26], pred[50])
+import numpy as np
+print(np.sum(pred))
+
+from sklearn.metrics import accuracy_score
+acc = accuracy_score(pred, labels_test)
+
+print("C=10000 accuracy", acc)
 
 #########################################################
 
